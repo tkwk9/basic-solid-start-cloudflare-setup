@@ -17,3 +17,6 @@ Thumbs.db
 
 # Cloudflare Edge Function
 functions
+
+# Custom
+.archives

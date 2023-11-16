@@ -13,7 +13,8 @@ import {
   Title,
 } from "solid-start";
 import "./root.scss";
-export default function Root() {
+
+const Root = () => {
   return (
     <Html lang="en">
       <Head>
@@ -24,8 +25,12 @@ export default function Root() {
       <Body>
         <Suspense>
           <ErrorBoundary>
-            <A class="rout-link" href="/">Index</A>
-            <A class="rout-link" href="/about">About</A>
+            <A class="rout-link" href="/">
+              Index
+            </A>
+            <A class="rout-link" href="/about">
+              About
+            </A>
             <Routes>
               <FileRoutes />
             </Routes>
@@ -35,4 +40,6 @@ export default function Root() {
       </Body>
     </Html>
   );
-}
+};
+
+export default Root;
