@@ -11,6 +11,7 @@
   "devDependencies": {
     "esbuild": "^0.14.54",
     "postcss": "^8.4.28",
+    "sass": "^1.69.5",
     "solid-start-cloudflare-pages": "^0.3.10",
     "solid-start-node": "^0.3.10",
     "vite": "^4.4.9",
