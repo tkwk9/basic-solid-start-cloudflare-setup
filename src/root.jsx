@@ -29,7 +29,7 @@ const Root = () => {
               Index
             </A>
             <A class="rout-link" href="/xyz">
-              About
+              XYZ
             </A>
             <Routes>
               <FileRoutes />
