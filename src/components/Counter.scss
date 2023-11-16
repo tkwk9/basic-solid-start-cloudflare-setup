@@ -9,6 +9,10 @@
   outline: none;
   width: 200px;
   font-variant-numeric: tabular-nums;
+  &:hover {
+    cursor: pointer;
+    background-color: rgba(68, 107, 158, 0.15);
+  }
 }
 
 .increment:focus {

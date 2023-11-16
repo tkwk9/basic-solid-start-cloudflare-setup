@@ -18,7 +18,7 @@ const Root = () => {
   return (
     <Html lang="en">
       <Head>
-        <Title>SolidStart - Bare</Title>
+        <Title>SolidStart - Cloudflare Pages</Title>
         <Meta charset="utf-8" />
         <Meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -28,7 +28,7 @@ const Root = () => {
             <A class="rout-link" href="/">
               Index
             </A>
-            <A class="rout-link" href="/about">
+            <A class="rout-link" href="/xyz">
               About
             </A>
             <Routes>
