@@ -15,8 +15,8 @@ dist
 .DS_Store
 Thumbs.db
 
-# Cloudflare Edge Function
-functions
+# Cloudflare Auto Generated Edge Functions
+/functions/\[\[path\]\].js
 
 # Custom
 .archives
