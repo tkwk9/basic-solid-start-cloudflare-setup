@@ -25,10 +25,10 @@ const Root = () => {
       <Body>
         <Suspense>
           <ErrorBoundary>
-            <A class="rout-link" href="/">
+            <A class="route-link" href="/">
               Index
             </A>
-            <A class="rout-link" href="/xyz">
+            <A class="route-link" href="/xyz">
               XYZ
             </A>
             <Routes>
