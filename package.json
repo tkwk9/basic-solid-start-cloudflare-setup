@@ -1,10 +1,10 @@
 {
   "name": "basic-solid-start-cloduflare-setup",
   "scripts": {
-    "watch": "solid-start dev && [ -f functions/[[path]].js ] && rm functions/[[path]].js",
+    "watch": "[ -f functions/[[path]].js ] && rm functions/[[path]].js; solid-start dev",
     "build": "solid-start build",
     "start": "solid-start start",
-    "nuke": "rm -rf .solid && rm -rf dist && rm -rf node_modules && [ -f functions/[[path]].js ] && rm functions/[[path]].js",
+    "nuke": "[ -f functions/[[path]].js ] && rm functions/[[path]].js; rm -rf .solid && rm -rf dist && rm -rf node_modules",
     "pages:dev": "wrangler pages dev --kv KV_TEST --proxy 3000",
     "pages:deploy": "npm run build && wrangler pages deploy ./dist/public"
   },
