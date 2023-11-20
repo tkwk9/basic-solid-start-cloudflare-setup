@@ -1,18 +1,17 @@
 export async function onRequest(context) {
-  const { env, request } = context;
-
   try {
-    const value = await env.KV_TEST.get("key");
+    const { env, request } = context;
+    const { searchParams } = new URL(request.url);
 
-    if (value === null) {
-      return new Response("Key not found", { status: 404 });
-    }
+    const key = searchParams.get("key");
 
+    if (!key) return new Response("Key not provided", { status: 400 });
+    const value = await env.KV_TEST.get(key);
+    if (value === null) return new Response("Key not found", { status: 404 });
     return new Response(value, {
-      headers: { 'Content-Type': 'application/json' },
+      headers: { "Content-Type": "application/json" },
     });
   } catch (error) {
-    console.log(error);
-    return new Response('Error fetching data', { status: 500 });
+    return new Response("Error fetching data", { status: 500 });
   }
 }

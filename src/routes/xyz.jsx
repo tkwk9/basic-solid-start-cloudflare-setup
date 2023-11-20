@@ -4,8 +4,8 @@ import { fetchKvData } from "~/utils/data-fetchers";
 
 import styles from "./xyz.module.scss";
 
-const Home = () => {
-  const [response] = createResource(fetchKvData);
+const Xyz = () => {
+  const [response] = createResource(() => fetchKvData("key"));
   return (
     <main>
       <Title>SolidStart - XYZ</Title>
@@ -16,4 +16,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Xyz;
