@@ -4,8 +4,8 @@ import { isServer } from "solid-js/web";
 const fetchKvData__dev = async (key) => {
   // TODO: Get dev SSR figured out or disable local SSR
   const link = isServer
-    ? `https://basic-solid-start-cloudflare-setup.pages.dev/kv_example?key=${key}`
-    : `/kv_example?key=${key}`;
+    ? `https://basic-solid-start-cloudflare-setup.pages.dev/kv?key=${key}`
+    : `/kv?key=${key}`;
   const response = await fetch(link);
   if (!response.ok) {
     throw new Error("Failed to fetch data");
@@ -22,7 +22,7 @@ const fetchKvData__prod = async (key) => {
   }
 
   // Create an API path
-  const link = `/kv_example?key=${key}`;
+  const link = `/kv?key=${key}`;
   const response = await fetch(link);
   if (!response.ok) {
     throw new Error("Failed to fetch data");
