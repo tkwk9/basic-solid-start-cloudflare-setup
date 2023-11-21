@@ -14,14 +14,15 @@ const fetchKvData__dev = async (key) => {
 };
 
 const fetchKvData__prod = async (key) => {
-  // TODO: Handle errors and missing values
   if (isServer) {
     const { env } = useServerContext();
-    const val = await env.KV_TEST.get(key);
+    const val = await env?.KV_TEST?.get(key);
+    // TODO: This probably shouldn't throw an error the way it is right now
+    // It should default to client-side fetch if there's an SSR error
+    if (!val) throw new Error("Failed to fetch data SSR");
     return JSON.parse(val);
   }
 
-  // Create an API path
   const link = `/kv?key=${key}`;
   const response = await fetch(link);
   if (!response.ok) {
