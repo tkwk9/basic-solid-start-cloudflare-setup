@@ -25,10 +25,16 @@ const Root = () => {
       <Body>
         <Suspense>
           <ErrorBoundary>
-            <A class="route-link" href="/">
+            <A
+              class="inline-block font-normal text-blue-950 dark:text-blue-600 hover:underline ml-4 my-1"
+              href="/"
+            >
               Index
             </A>
-            <A class="route-link" href="/xyz">
+            <A
+              class="inline-block font-normal text-blue-950 dark:text-blue-600 hover:underline ml-4 my-1"
+              href="/xyz"
+            >
               XYZ
             </A>
             <Routes>
