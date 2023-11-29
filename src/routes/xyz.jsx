@@ -8,7 +8,9 @@ const Xyz = () => {
     <main>
       <Title>SolidStart - XYZ</Title>
       <Show when={response()}>
-        <h1 class="text-center text-5xl p-1 text-blue-800">{response().data}</h1>
+        <h1 class="text-center text-5xl p-1 text-blue-800 mt-10">
+          {response().data}
+        </h1>
       </Show>
     </main>
   );
