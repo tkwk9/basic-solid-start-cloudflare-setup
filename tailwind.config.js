@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  // add JIT and purge
+  // TODO: See if purge is necessary
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],

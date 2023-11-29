@@ -1,9 +1,10 @@
 import { Title } from "solid-start";
-import { createResource, Show } from "solid-js";
-import { fetchKvData } from "~/utils/data-fetchers";
+import { Show } from "solid-js";
+import { useKvData } from "~/utils/data-fetchers";
 
 const Xyz = () => {
-  const [response] = createResource(() => fetchKvData("key"));
+  // const [response] = createResource(() => fetchKvData("key"));
+  const [response] = useKvData("key");
   return (
     <main>
       <Title>SolidStart - XYZ</Title>

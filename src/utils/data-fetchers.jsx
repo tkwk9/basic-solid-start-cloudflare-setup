@@ -1,12 +1,10 @@
 import { useServerContext } from "solid-start";
+import { createResource, onMount } from 'solid-js';
 import { isServer } from "solid-js/web";
 
 const fetchKvData__dev = async (key) => {
-  // TODO: Get dev SSR figured out or disable local SSR
-  const link = isServer
-    ? `https://basic-solid-start-cloudflare-setup.pages.dev/kv?key=${key}`
-    : `/kv?key=${key}`;
-  const response = await fetch(link);
+  if(isServer) return null;
+  const response = await fetch(`/kv?key=${key}`);
   if (!response.ok) {
     throw new Error("Failed to fetch data");
   }
@@ -34,4 +32,17 @@ const fetchKvData__prod = async (key) => {
 const fetchKvData =
   process.env.NODE_ENV === "development" ? fetchKvData__dev : fetchKvData__prod;
 
-export { fetchKvData };
+
+const useKvData = (key) => {
+  // TODO: handle null key
+  let [data, { refetch }] = createResource(() => fetchKvData(key));
+
+  // TODO: Make this dev-specific + handle SSR error in production
+  onMount(() => {
+    refetch();
+  });
+
+  return [data];
+}
+
+export { useKvData };
